@@ -4278,6 +4278,7 @@ xref: OMIT:ensemblGeneID
 is_a: SO:0000704 ! gene
 relationship: ncro:is_gene_template_of_mRNA ncro:0000002 ! miRNA_target_gene_mRNA
 relationship: OMIT:has_gene_symbol_in_NCBI_gene OMIT:0000005 ! information_from_NCBI_gene
+relationship: OMIT:has_gene_accession_number_in_NCBI_nucleotide OMIT:0000006 ! information_from_NCBI_nucleotide
 relationship: OMIT:is_gene_template_of_protein OMIT:0000026 ! target_protein
 
 [Term]
@@ -27113,6 +27114,12 @@ id: OMIT:has_gene_symbol_in_NCBI_gene
 name: has_gene_symbol_in_NCBI_gene
 domain: ncro:0000025 ! miRNA_target_gene
 range: OMIT:0000005 ! information_from_NCBI_gene
+
+[Typedef]
+id: OMIT:has_gene_accession_number_in_NCBI_nucleotide
+name: has_gene_accession_number_in_NCBI_nucleotide
+domain: ncro:0000025 ! miRNA_target_gene
+range: OMIT:0000006 ! information_from_NCBI_nucleotide
 
 [Typedef]
 id: OMIT:is_about_PubMed_id
