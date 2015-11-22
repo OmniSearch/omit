@@ -1117,6 +1117,15 @@
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/ncro_0000025"/>
     </owl:ObjectProperty>
     
+    <!-- http://purl.obolibrary.org/obo/OMIT#_has_gene_accession_number_in_NCBI_nucleotide -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OMIT#_has_gene_accession_number_in_NCBI_nucleotide">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_gene_accession_number_in_NCBI_nucleotide</rdfs:label>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIT</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OMIT:has_gene_accession_number_in_NCBI_nucleotide</oboInOwl:id>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OMIT_0000006"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/ncro_0000025"/>
+    </owl:ObjectProperty>
 
 
     <!-- http://purl.obolibrary.org/obo/OMIT#_is_about_PubMed_id -->
@@ -12620,6 +12629,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OMIT#_has_gene_symbol_in_NCBI_gene"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OMIT_0000005"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OMIT#_has_gene_accession_number_in_NCBI_nucleotide"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OMIT_0000006"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
