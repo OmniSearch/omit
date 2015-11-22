@@ -4267,8 +4267,8 @@ is_a: SO:0000234 ! mRNA
 id: ncro:0000003
 name: miRNA_and_miRNA_target_gene_binding
 is_a: IAO:0000030 ! information content entity
-relationship: OBO_REL:participates_in ncro:0000025 ! miRNA_target_gene
-relationship: OBO_REL:participates_in SO:0000276 ! miRNA
+relationship: OBO_REL:has_participant ncro:0000025 ! miRNA_target_gene
+relationship: OBO_REL:has_participant SO:0000276 ! miRNA
 relationship: OMIT:miRNA_target_assumption_based_on OMIT:0000001 ! computationally_asserted_evidence
 
 [Term]
