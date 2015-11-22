@@ -12595,13 +12595,13 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBO_REL#_participates_in"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBO_REL#_has_participant"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000276"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBO_REL#_participates_in"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBO_REL#_has_participant"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ncro_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
