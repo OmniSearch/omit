@@ -4278,6 +4278,7 @@ xref: OMIT:ensemblGeneID
 is_a: SO:0000704 ! gene
 relationship: ncro:is_gene_template_of_mRNA ncro:0000002 ! miRNA_target_gene_mRNA
 relationship: OMIT:is_gene_template_of_protein OMIT:0000026 ! target_protein
+relationship: OMIT:has_gene_symbol_in_NCBI_gene OMIT:0000005 ! information_from_NCBI_gene
 
 [Term]
 id: ncro:0000026
@@ -24123,11 +24124,18 @@ is_a: IAO:0000030 ! information content entity
 id: OMIT:0000005
 name: information_from_NCBI_gene
 is_a: IAO:0000030 ! information content entity
+relationship: OBI:0000299 OMIT:0000040 ! gene_id_in_NCBI_gene
+relationship: OBI:0000299 OMIT:0000039 ! summary_in_NCBI_gene
+relationship: OBI:0000299 OMIT:0000035 ! bibliography_in_NCBI_gene
+relationship: OBI:0000299 OMIT:0000038 ! miRNA_target_gene_symbol
 
 [Term]
 id: OMIT:0000006
 name: information_from_NCBI_nucleotide
 is_a: IAO:0000030 ! information content entity
+relationship: OBI:0000299 OMIT:0000036 ! fasta_in_NCBI_nucleotide
+relationship: OBI:0000299 OMIT:0000037 ! PubMed_in_NCBI_nucleotide
+relationship: OBI:0000299 OMIT:0000034 ! accession_in_NCBI_nucleotide
 
 [Term]
 id: OMIT:0000008
@@ -24138,6 +24146,7 @@ is_a: bfo:Entity ! entity
 id: OMIT:0000009
 name: gene_id_in_miRDB
 is_a: IAO:0000030 ! information content entity
+relationship: OMIT:has_gene_id_in_NCBI_gene OMIT:0000005 ! information_from_NCBI_gene
 
 [Term]
 id: OMIT:0000010
@@ -24242,6 +24251,56 @@ id: OMIT:0000030
 name: PubMed_id
 is_a: IAO:0000030 ! information content entity
 creation_date: 2015-05-24T11:17:18Z
+
+[Term]
+id: OMIT:0000031
+name: ensembl_gene_id_in_DIANA_microT
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000032
+name: KEGG_pathway_in_DIANA_mirPath
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000033
+name: p_value_in_DIANA_mirPath
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000034
+name: accession_in_NCBI_nucleotide
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000035
+name: bibliography_in_NCBI_gene
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000036
+name: fasta_in_NCBI_nucleotide
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000037
+name: PubMed_in_NCBI_nucleotide
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000038
+name: miRNA_target_gene_symbol
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000039
+name: summary_in_NCBI_gene
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000040
+name: gene_id_in_NCBI_gene
+is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: PR:000000001
@@ -27003,40 +27062,10 @@ transitive_over: part_of ! part_of
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Typedef]
-id: OMIT:accession_in_NCBI_nucleotide
-name: accession_in_NCBI_nucleotide
-created_by: He_Zhang
-creation_date: 2015-05-24T12:04:05Z
-
-[Typedef]
-id: OMIT:bibliography_in_NCBI_gene
-name: bibliography_in_NCBI_gene
-created_by: He_Zhang
-creation_date: 2015-05-24T12:04:59Z
-
-[Typedef]
-id: OMIT:ensembl_gene_id_in_DIANA_microT
-name: ensembl_gene_id_in_DIANA_microT
-domain: OMIT:0000022 ! prediction_from_DIANA_microT
-range: xsd:string ! xsd:string
-
-[Typedef]
-id: OMIT:fasta_in_NCBI_nucleotide
-name: fasta_in_NCBI_nucleotide
-created_by: He_Zhang
-creation_date: 2015-05-24T12:03:12Z
-
-[Typedef]
 id: OMIT:gene_description
 name: gene_description
 domain: SO:0000704 ! gene
 range: xsd:string ! xsd:string
-
-[Typedef]
-id: OMIT:gene_id_in_NCBI_gene
-name: gene_id_in_NCBI_gene
-created_by: He_Zhang
-creation_date: 2015-05-24T12:06:49Z
 
 [Typedef]
 id: OMIT:is_about_PubMed_id
@@ -27044,6 +27073,18 @@ name: is_about_PubMed_id
 domain: OMIT:0000003 ! information_from_PubMed
 range: OMIT:0000030 ! PubMed_id
 creation_date: 2015-05-25T15:47:49Z
+
+[Typedef]
+id: OMIT:has_gene_id_in_NCBI_gene
+name: has_gene_id_in_NCBI_gene
+domain: OMIT:0000009 ! gene_id_in_miRDB
+range: OMIT:0000005 ! information_from_NCBI_gene
+
+[Typedef]
+id: OMIT:has_gene_symbol_in_NCBI_gene
+name: has_gene_symbol_in_NCBI_gene
+domain: ncro:0000025 ! miRNA_target_gene
+range: OMIT:0000005 ! information_from_NCBI_gene
 
 [Typedef]
 id: OMIT:is_gene_template_of_protein
@@ -27058,12 +27099,6 @@ domain: IAO:0000109 ! measurement datum
 range: OMIT:0000001 ! computationally_asserted_evidence
 
 [Typedef]
-id: OMIT:KEGG_pathway_in_DIANA_mirPath
-name: KEGG_pathway_in_DIANA_mirPath
-domain: OMIT:0000023 ! prediction_from_DIANA_mirPath
-range: xsd:string ! xsd:string
-
-[Typedef]
 id: OMIT:miRNA_name
 name: miRNA_name
 domain: SO:0000276 ! miRNA
@@ -27074,30 +27109,6 @@ id: OMIT:miRNA_target_assumption_based_on
 name: miRNA_target_assumption_based_on
 domain: ncro:0000003 ! miRNA_and_miRNA_target_gene_assumption
 range: OMIT:0000001 ! computationally_asserted_evidence
-
-[Typedef]
-id: OMIT:miRNA_target_gene_symbol
-name: miRNA_target_gene_symbol
-domain: SO:0000704 ! gene
-range: xsd:string ! xsd:string
-
-[Typedef]
-id: OMIT:p_value_in_DIANA_mirPath
-name: p_value_in_DIANA_mirPath
-domain: OMIT:0000023 ! prediction_from_DIANA_mirPath
-range: xsd:decimal ! xsd:decimal
-
-[Typedef]
-id: OMIT:PubMed_in_NCBI_nucleotide
-name: PubMed_in_NCBI_nucleotide
-created_by: He_Zhang
-creation_date: 2015-05-24T12:03:42Z
-
-[Typedef]
-id: OMIT:summary_in_NCBI_gene
-name: summary_in_NCBI_gene
-created_by: He_Zhang
-creation_date: 2015-05-24T12:05:39Z
 
 [Typedef]
 id: part_of
