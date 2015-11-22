@@ -1,7 +1,7 @@
 format-version: 1.2
-date: 08:06:2015 13:19
-saved-by: Jingshan Huang
-auto-generated-by: OBO-Edit 2.2
+date: 30:06:2015 19:06
+saved-by: He Zhang
+auto-generated-by: OBO-Edit 2.3
 subsetdef: biosapiens "biosapiens protein feature ontology"
 subsetdef: Cross_product_review "Involved_in"
 subsetdef: DBVAR "database of genomic structural variation"
@@ -4265,10 +4265,10 @@ is_a: SO:0000234 ! mRNA
 
 [Term]
 id: ncro:0000003
-name: miRNA_and_miRNA_target_gene_assumption
+name: miRNA_and_miRNA_target_gene_binding
 is_a: IAO:0000030 ! information content entity
-relationship: ncro:is_about_miRNA SO:0000276 ! miRNA
-relationship: ncro:is_about_miRNA_target_gene ncro:0000025 ! miRNA_target_gene
+relationship: OBO_REL:participates_in ncro:0000025 ! miRNA_target_gene
+relationship: OBO_REL:participates_in SO:0000276 ! miRNA
 relationship: OMIT:miRNA_target_assumption_based_on OMIT:0000001 ! computationally_asserted_evidence
 
 [Term]
@@ -4277,8 +4277,8 @@ name: miRNA_target_gene
 xref: OMIT:ensemblGeneID
 is_a: SO:0000704 ! gene
 relationship: ncro:is_gene_template_of_mRNA ncro:0000002 ! miRNA_target_gene_mRNA
-relationship: OMIT:is_gene_template_of_protein OMIT:0000026 ! target_protein
 relationship: OMIT:has_gene_symbol_in_NCBI_gene OMIT:0000005 ! information_from_NCBI_gene
+relationship: OMIT:is_gene_template_of_protein OMIT:0000026 ! target_protein
 
 [Term]
 id: ncro:0000026
@@ -24098,6 +24098,27 @@ is_a: ncro:0001667 ! miRNA_gene_family
 relationship: ncro:is_about_grouped_miRNA ncro:0002692 ! hsa-mir-4523
 
 [Term]
+id: ncro:0003282
+name: has-miR-125b-5p
+namespace: NonCoding_RNA
+xref: miRBase:MIMAT0000423
+is_a: ncro:0000810 ! human_miRNA
+
+[Term]
+id: ncro:0003283
+name: has-miR-125b-1-3p
+namespace: NonCoding_RNA
+xref: miRBase:MIMAT0004592
+is_a: ncro:0000810 ! human_miRNA
+
+[Term]
+id: ncro:0003284
+name: has-miR-125b-2-3p
+namespace: NonCoding_RNA
+xref: miRBase:MIMAT0004603
+is_a: ncro:0000810 ! human_miRNA
+
+[Term]
 id: OMIT:0000001
 name: computationally_asserted_evidence
 is_a: IAO:0000030 ! information content entity
@@ -24106,14 +24127,16 @@ is_a: IAO:0000030 ! information content entity
 id: OMIT:0000002
 name: information_from_miRNA_target_prediction_databases
 is_a: OMIT:0000001 ! computationally_asserted_evidence
-relationship: ncro:is_about_miRNA SO:0000276 ! miRNA
-relationship: ncro:is_about_miRNA_target_gene ncro:0000025 ! miRNA_target_gene
+relationship: RO:0000057 ncro:0000025 ! miRNA_target_gene
+relationship: RO:0000057 SO:0000276 ! miRNA
 
 [Term]
 id: OMIT:0000003
 name: information_from_PubMed
 is_a: IAO:0000030 ! information content entity
-relationship: OMIT:is_about_PubMed_id OMIT:0000030 ! PubMed_id
+relationship: BFO_0000051 OMIT:0000030 ! PubMed_id
+relationship: RO:0000057 SO:0000276 ! miRNA
+relationship: BFO_0000051 OMIT:0000041 ! PubMed_summary
 
 [Term]
 id: OMIT:0000004
@@ -24124,18 +24147,18 @@ is_a: IAO:0000030 ! information content entity
 id: OMIT:0000005
 name: information_from_NCBI_gene
 is_a: IAO:0000030 ! information content entity
-relationship: OBI:0000299 OMIT:0000040 ! gene_id_in_NCBI_gene
-relationship: OBI:0000299 OMIT:0000039 ! summary_in_NCBI_gene
-relationship: OBI:0000299 OMIT:0000035 ! bibliography_in_NCBI_gene
-relationship: OBI:0000299 OMIT:0000038 ! miRNA_target_gene_symbol
+relationship: BFO_0000051 OMIT:0000035 ! PubMed_summary_in_NCBI_gene
+relationship: BFO_0000051 OMIT:0000038 ! miRNA_target_gene_symbol
+relationship: BFO_0000051 OMIT:0000039 ! summary_in_NCBI_gene
+relationship: BFO_0000051 OMIT:0000040 ! gene_id_in_NCBI_gene
 
 [Term]
 id: OMIT:0000006
 name: information_from_NCBI_nucleotide
 is_a: IAO:0000030 ! information content entity
-relationship: OBI:0000299 OMIT:0000036 ! fasta_in_NCBI_nucleotide
-relationship: OBI:0000299 OMIT:0000037 ! PubMed_in_NCBI_nucleotide
-relationship: OBI:0000299 OMIT:0000034 ! accession_in_NCBI_nucleotide
+relationship: BFO_0000051 OMIT:0000034 ! accession_in_NCBI_nucleotide
+relationship: BFO_0000051 OMIT:0000036 ! fasta_in_NCBI_nucleotide
+relationship: BFO_0000051 OMIT:0000037 ! PubMed_in_NCBI_nucleotide
 
 [Term]
 id: OMIT:0000008
@@ -24197,41 +24220,41 @@ is_a: IAO:0000030 ! information content entity
 id: OMIT:0000019
 name: prediction_from_TargetScan
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000013 ! gene_transcript_id_in_TargetScan
-relationship: OBI:0000299 OMIT:0000014 ! gene_context_score_in_TargetScan
+relationship: BFO_0000051 OMIT:0000013 ! gene_transcript_id_in_TargetScan
+relationship: BFO_0000051 OMIT:0000014 ! gene_context_score_in_TargetScan
 
 [Term]
 id: OMIT:0000020
 name: prediction_from_miRDB
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000009 ! gene_id_in_miRDB
-relationship: OBI:0000299 OMIT:0000010 ! gene_transcript_id_in_miRDB
-relationship: OBI:0000299 OMIT:0000011 ! target_score_in_miRDB
-relationship: OBI:0000299 OMIT:0000012 ! gene_three_prime_UTR_sequence_in_miRDB
+relationship: BFO_0000051 OMIT:0000009 ! gene_id_in_miRDB
+relationship: BFO_0000051 OMIT:0000010 ! gene_transcript_id_in_miRDB
+relationship: BFO_0000051 OMIT:0000011 ! target_score_in_miRDB
+relationship: BFO_0000051 OMIT:0000012 ! gene_three_prime_UTR_sequence_in_miRDB
 
 [Term]
 id: OMIT:0000021
 name: prediction_from_miRanda
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000015 ! mirSVR_score_in_miRanda
+relationship: BFO_0000051 OMIT:0000015 ! mirSVR_score_in_miRanda
 
 [Term]
 id: OMIT:0000022
 name: prediction_from_DIANA_microT
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000016 ! gene_miTG_score_in_DIANA_microT
+relationship: BFO_0000051 OMIT:0000016 ! gene_miTG_score_in_DIANA_microT
 
 [Term]
 id: OMIT:0000023
 name: prediction_from_DIANA_mirPath
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000017 ! mirSVR_score_in_DIANA_mirPath
+relationship: BFO_0000051 OMIT:0000017 ! mirSVR_score_in_DIANA_mirPath
 
 [Term]
 id: OMIT:0000024
 name: prediction_from_Diana_TarBase
 is_a: OMIT:0000002 ! information_from_miRNA_target_prediction_databases
-relationship: OBI:0000299 OMIT:0000018 ! methods_in_DIANA_TarBase
+relationship: BFO_0000051 OMIT:0000018 ! methods_in_DIANA_TarBase
 
 [Term]
 id: OMIT:0000026
@@ -24274,8 +24297,9 @@ is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: OMIT:0000035
-name: bibliography_in_NCBI_gene
-is_a: IAO:0000030 ! information content entity
+name: PubMed_summary_in_NCBI_gene
+is_a: OMIT:0000041 ! PubMed_summary
+
 
 [Term]
 id: OMIT:0000036
@@ -24300,6 +24324,11 @@ is_a: IAO:0000030 ! information content entity
 [Term]
 id: OMIT:0000040
 name: gene_id_in_NCBI_gene
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: OMIT:0000041
+name: PubMed_summary
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -26719,6 +26748,12 @@ property_value: has_example "the time it takes to run a marathon" xsd:string
 creation_date: 2013-09-28T18:35:33Z
 
 [Typedef]
+id: BFO_0000051
+name: has part
+namespace: bfo
+creation_date: 2015-06-30T19:05:15Z
+
+[Typedef]
 id: has_integral_part
 name: has_integral_part
 namespace: sequence
@@ -27068,13 +27103,6 @@ domain: SO:0000704 ! gene
 range: xsd:string ! xsd:string
 
 [Typedef]
-id: OMIT:is_about_PubMed_id
-name: is_about_PubMed_id
-domain: OMIT:0000003 ! information_from_PubMed
-range: OMIT:0000030 ! PubMed_id
-creation_date: 2015-05-25T15:47:49Z
-
-[Typedef]
 id: OMIT:has_gene_id_in_NCBI_gene
 name: has_gene_id_in_NCBI_gene
 domain: OMIT:0000009 ! gene_id_in_miRDB
@@ -27085,6 +27113,13 @@ id: OMIT:has_gene_symbol_in_NCBI_gene
 name: has_gene_symbol_in_NCBI_gene
 domain: ncro:0000025 ! miRNA_target_gene
 range: OMIT:0000005 ! information_from_NCBI_gene
+
+[Typedef]
+id: OMIT:is_about_PubMed_id
+name: is_about_PubMed_id
+domain: OMIT:0000003 ! information_from_PubMed
+range: OMIT:0000030 ! PubMed_id
+creation_date: 2015-05-25T15:47:49Z
 
 [Typedef]
 id: OMIT:is_gene_template_of_protein
@@ -27107,7 +27142,7 @@ range: xsd:string ! xsd:string
 [Typedef]
 id: OMIT:miRNA_target_assumption_based_on
 name: miRNA_target_assumption_based_on
-domain: ncro:0000003 ! miRNA_and_miRNA_target_gene_assumption
+domain: ncro:0000003 ! miRNA_and_miRNA_target_gene_binding
 range: OMIT:0000001 ! computationally_asserted_evidence
 
 [Typedef]
@@ -27173,4 +27208,5 @@ name: similar_to
 namespace: sequence
 subset: SOFA
 is_symmetric: true
+
 
