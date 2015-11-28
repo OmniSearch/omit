@@ -609,7 +609,6 @@ AnnotationAssertion(oboInOwl:inSubset obo:GO_0008150 OMIT:goslim_generic)
 AnnotationAssertion(oboInOwl:inSubset obo:GO_0008150 OMIT:goslim_pir)
 AnnotationAssertion(oboInOwl:inSubset obo:GO_0008150 OMIT:gosubset_prok)
 AnnotationAssertion(oboInOwl:inSubset obo:GO_0008150 OMIT:goslim_yeast)
-
 AnnotationAssertion(oboInOwl:id obo:BFO_0000024 "BFO:0000024"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:BFO_0000024 "bfo"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:BFO_0000024 "fiat object"^^xsd:string)
