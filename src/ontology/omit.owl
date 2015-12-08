@@ -6,7 +6,6 @@
     <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY OMIT "http://purl.obolibrary.org/obo/OMIT#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -19,7 +18,6 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:OMIT="&obo;OMIT#"
@@ -34,7 +32,6 @@
         <oboInOwl:default-namespace rdf:datatype="&xsd;string">OMIT</oboInOwl:default-namespace>
         <owl:imports rdf:resource="&obo;iao/2015-02-23/ontology-metadata.owl"/>
         <owl:imports rdf:resource="&obo;ncro/dev/ncro.owl"/>
-        <owl:imports rdf:resource="&obo;omit/dev/imports.owl"/>
         <owl:versionIRI rdf:resource="&obo;omit/dev/omit.owl"/>
     </owl:Ontology>
     
@@ -56,6 +53,18 @@
     <owl:AnnotationProperty rdf:about="&obo;OMIT_0000095">
         <rdfs:label xml:lang="en">gene id</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasOBONamespace"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;id"/>
     
 
 
@@ -209,6 +218,67 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0000085"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002331 -->
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0002331"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBO_REL#_part_of -->
+
+    <owl:ObjectProperty rdf:about="&obo;OBO_REL#_part_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIT_0000108 -->
+
+    <owl:DatatypeProperty rdf:about="&obo;OMIT_0000108">
+        <rdfs:label xml:lang="en">score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIT_0000109 -->
+
+    <owl:DatatypeProperty rdf:about="&obo;OMIT_0000109">
+        <rdfs:label xml:lang="en">gene id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIT_0000150 -->
+
+    <owl:DatatypeProperty rdf:about="&obo;OMIT_0000150">
+        <rdfs:label rdf:datatype="&xsd;string">mesh term</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIT_0000151 -->
+
+    <owl:DatatypeProperty rdf:about="&obo;OMIT_0000151">
+        <rdfs:label rdf:datatype="&xsd;string">pubmed id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -220,16 +290,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="&obo;CHEBI_24431"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000109 -->
 
-    <rdf:Description rdf:about="&obo;IAO_0000109">
+    <owl:Class rdf:about="&obo;IAO_0000109">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;OMIT_0000101"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -251,6 +327,12 @@
     <rdf:Description rdf:about="&obo;NCRO_0000025">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;OMIT_0000100"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000026"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;OMIT_0000096"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000006"/>
             </owl:Restriction>
@@ -261,22 +343,8 @@
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;OMIT_0000100"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000026"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
         <oboInOwl:hasDbXref rdf:datatype="&xsd;string">OMIT:ensemblGeneID</oboInOwl:hasDbXref>
-    </rdf:Description>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OGMS_0000023 -->
-
-    <rdf:Description rdf:about="&obo;OGMS_0000023">
-        <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
     </rdf:Description>
     
 
@@ -322,6 +390,12 @@
         <rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000041"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0000057"/>
                 <owl:someValuesFrom rdf:resource="&obo;SO_0000276"/>
             </owl:Restriction>
@@ -330,12 +404,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000030"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000041"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -363,13 +431,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000038"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000039"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000035"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -381,7 +443,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000035"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000038"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000039"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -398,12 +466,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000036"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000037"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -411,6 +473,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000034"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -554,13 +622,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000014"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000013"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000013"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000014"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -577,6 +645,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000012"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -584,12 +658,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000010"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -849,7 +917,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000043">
         <rdfs:label rdf:datatype="&xsd;string">Adipogenesis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -858,7 +926,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000044">
         <rdfs:label rdf:datatype="&xsd;string">Anoikis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -867,7 +935,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000045">
         <rdfs:label rdf:datatype="&xsd;string">Apoptosis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -876,7 +944,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000046">
         <rdfs:label rdf:datatype="&xsd;string">Asymmetric cell division</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -885,7 +953,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000047">
         <rdfs:label rdf:datatype="&xsd;string">Autophagy</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -894,7 +962,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000048">
         <rdfs:label rdf:datatype="&xsd;string">Carcinogenesis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -903,7 +971,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000049">
         <rdfs:label rdf:datatype="&xsd;string">Cell Adhesion</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -912,7 +980,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000050">
         <rdfs:label rdf:datatype="&xsd;string">Cell aggregation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -921,7 +989,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000051">
         <rdfs:label rdf:datatype="&xsd;string">Cell cycle</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -930,7 +998,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000052">
         <rdfs:label rdf:datatype="&xsd;string">Cell cycle checkpoint</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -939,7 +1007,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000053">
         <rdfs:label rdf:datatype="&xsd;string">Cell dedifferentiation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -948,7 +1016,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000054">
         <rdfs:label rdf:datatype="&xsd;string">Cell Differentiation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -957,7 +1025,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000055">
         <rdfs:label rdf:datatype="&xsd;string">Cell division</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -966,7 +1034,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000056">
         <rdfs:label rdf:datatype="&xsd;string">Cell enlargement</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -975,7 +1043,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000057">
         <rdfs:label rdf:datatype="&xsd;string">Cell migration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -984,7 +1052,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000058">
         <rdfs:label rdf:datatype="&xsd;string">Cell Polarity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -993,7 +1061,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000059">
         <rdfs:label rdf:datatype="&xsd;string">Cell Proliferation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1002,7 +1070,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000060">
         <rdfs:label rdf:datatype="&xsd;string">Cell transformation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1011,7 +1079,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000061">
         <rdfs:label rdf:datatype="&xsd;string">Chromosomal instability</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1020,7 +1088,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000062">
         <rdfs:label rdf:datatype="&xsd;string">Chromosome aberration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1029,7 +1097,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000063">
         <rdfs:label rdf:datatype="&xsd;string">Circulating</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1038,7 +1106,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000064">
         <rdfs:label rdf:datatype="&xsd;string">Contact inhibition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1047,7 +1115,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000065">
         <rdfs:label rdf:datatype="&xsd;string">Cytokinesis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1056,7 +1124,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000066">
         <rdfs:label rdf:datatype="&xsd;string">DNA break</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1065,7 +1133,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000067">
         <rdfs:label rdf:datatype="&xsd;string">DNA cleavage</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1074,7 +1142,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000068">
         <rdfs:label rdf:datatype="&xsd;string">DNA damage</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1083,7 +1151,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000069">
         <rdfs:label rdf:datatype="&xsd;string">DNA degradation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1092,7 +1160,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000070">
         <rdfs:label rdf:datatype="&xsd;string">DNA methylation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1101,7 +1169,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000071">
         <rdfs:label rdf:datatype="&xsd;string">DNA repair</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1110,7 +1178,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000072">
         <rdfs:label rdf:datatype="&xsd;string">Drug resistance</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1119,7 +1187,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000073">
         <rdfs:label rdf:datatype="&xsd;string">Endocytosis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1128,7 +1196,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000074">
         <rdfs:label rdf:datatype="&xsd;string">Entosis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1137,7 +1205,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000075">
         <rdfs:label rdf:datatype="&xsd;string">Epithelial-Mesenchymal transition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1146,7 +1214,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000076">
         <rdfs:label rdf:datatype="&xsd;string">Glycolysis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1155,7 +1223,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000077">
         <rdfs:label rdf:datatype="&xsd;string">Infiltration</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1164,7 +1232,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000078">
         <rdfs:label rdf:datatype="&xsd;string">Invasiveness</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1173,7 +1241,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000079">
         <rdfs:label rdf:datatype="&xsd;string">Mesenchymal- Epithelial- transition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1182,7 +1250,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000080">
         <rdfs:label rdf:datatype="&xsd;string">Metastasis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1191,7 +1259,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000081">
         <rdfs:label rdf:datatype="&xsd;string">Methylation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1200,7 +1268,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000082">
         <rdfs:label rdf:datatype="&xsd;string">Mitochondrial degradation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1209,7 +1277,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000083">
         <rdfs:label rdf:datatype="&xsd;string">Mitochondrial dynamics</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1218,7 +1286,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000084">
         <rdfs:label rdf:datatype="&xsd;string">Mitochondrial swelling</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1227,7 +1295,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000085">
         <rdfs:label rdf:datatype="&xsd;string">Mitophagy</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1236,7 +1304,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000086">
         <rdfs:label rdf:datatype="&xsd;string">Mitosis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1245,7 +1313,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000087">
         <rdfs:label rdf:datatype="&xsd;string">Mutagenesis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1254,7 +1322,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000088">
         <rdfs:label rdf:datatype="&xsd;string">Mutation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1263,7 +1331,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000089">
         <rdfs:label rdf:datatype="&xsd;string">Necrosis</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1272,7 +1340,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000090">
         <rdfs:label rdf:datatype="&xsd;string">Oxygen Consumption</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1281,7 +1349,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000091">
         <rdfs:label rdf:datatype="&xsd;string">Recurrence</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1290,7 +1358,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000092">
         <rdfs:label rdf:datatype="&xsd;string">Regression</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1299,7 +1367,7 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000093">
         <rdfs:label rdf:datatype="&xsd;string">Symmetric cell division</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
     </owl:Class>
     
 
@@ -1308,7 +1376,16 @@
 
     <owl:Class rdf:about="&obo;OMIT_0000094">
         <rdfs:label rdf:datatype="&xsd;string">Ubiquitylation</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&obo;OGMS_0000023"/>
+        <rdfs:subClassOf rdf:resource="&obo;OMIT_0000110"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMIT_0000110 -->
+
+    <owl:Class rdf:about="&obo;OMIT_0000110">
+        <rdfs:label rdf:datatype="&xsd;string">MeSH_term</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&obo;BFO_0000019"/>
     </owl:Class>
     
 
