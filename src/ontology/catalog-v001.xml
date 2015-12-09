@@ -3,6 +3,7 @@
     <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/ncro/chebi-imports.owl" uri="file:/D:/Work/Proposals/NIH-U01/Project/GitHub-2015/ncro/src/ontology/chebi-imports.owl"/>
     <uri id="User Entered Import Resolution" name="http://purl.obolibrary.org/obo/omit/dev/imports.owl" uri="imports.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1449608846764" name="http://purl.obolibrary.org/obo/omit.owl" uri="omit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1449616932985" name="http://purl.obolibrary.org/obo/ncro-obo-WorkingVersion-06302015.owl" uri="ncro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1449616932985" name="http://purl.obolibrary.org/obo/omit.owl" uri="omit.owl"/>
     </group>
 </catalog>

@@ -327,8 +327,8 @@
     <rdf:Description rdf:about="&obo;NCRO_0000025">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;OMIT_0000100"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000026"/>
+                <owl:onProperty rdf:resource="&obo;OMIT_0000098"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000005"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -339,8 +339,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;OMIT_0000098"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000005"/>
+                <owl:onProperty rdf:resource="&obo;OMIT_0000100"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000026"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -368,13 +368,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0000057"/>
-                <owl:someValuesFrom rdf:resource="&obo;NCRO_0000025"/>
+                <owl:someValuesFrom rdf:resource="&obo;SO_0000276"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0000057"/>
-                <owl:someValuesFrom rdf:resource="&obo;SO_0000276"/>
+                <owl:someValuesFrom rdf:resource="&obo;NCRO_0000025"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -391,6 +391,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000030"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000041"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -398,12 +404,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0000057"/>
                 <owl:someValuesFrom rdf:resource="&obo;SO_0000276"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000030"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -431,12 +431,6 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000035"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000040"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -444,6 +438,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="&obo;OMIT_0000038"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000035"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -466,13 +466,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000037"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000034"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000034"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000037"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -645,13 +645,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000012"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000009"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000011"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -663,7 +663,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000009"/>
+                <owl:someValuesFrom rdf:resource="&obo;OMIT_0000011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
@@ -747,14 +747,14 @@
         <rdfs:subClassOf rdf:resource="&obo;PR_000000001"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002331"/>
-                <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
+                <owl:onProperty rdf:resource="&obo;RO_0000085"/>
+                <owl:someValuesFrom rdf:resource="&obo;GO_0003674"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0000085"/>
-                <owl:someValuesFrom rdf:resource="&obo;GO_0003674"/>
+                <owl:onProperty rdf:resource="&obo;RO_0002331"/>
+                <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:hasOBONamespace rdf:datatype="&xsd;string">OMIT</oboInOwl:hasOBONamespace>
