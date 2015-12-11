@@ -1,13 +1,17 @@
-﻿hsa-miR-125b-5p
+﻿[Comment by Jingshan] Suggest to create a new section to the end of this document (whose name is of your choice). All completed bullets will be moved to this new section.
+
+hsa-miR-125b-5p
 
 1)
 TargetGene		# of PubMed Papers Total			# of PubMed Papers after filtering "Drug Resistance"		% of reduced number
 IRF4			130									3															98
+[Comment by Jingshan] Suggest to move the above to the above-mentioned new section.
 
 Later)
 Create issue for missing miRNA labels for NCRO.
 Clean up data (remove duplicated predictions, get correct gene ids)
 Add Usage/Relations in ontologies.
+[Comment by Jingshan] Suggest to combine the above three issues into "Ontology Fixes."
 
 Ontology Fixes:
 1)
@@ -33,9 +37,14 @@ The ‘part of’ is used several time in the diagram but is not used in NCRO at
 
 3)
 Add BFO:has part
+[Comment by Jingshan] Should be RO:has part
 
 4)
 Add total number to non-MeSH-filtered gene names in Predicted by
+[Comment by Jingshan] Should be moved to a new section "Software Fixes" and it is abuot the "Publications" rather than "Predicted By" column.
 
 5)
 Add comments to source code
+[Comment by Jingshan] Should be moved to the section "Software Fixes."
+
+[Comment by Jingshan] Add a new bullet to "Software Fixes" regarding the implementation of the radio "Predicted by all databases."
