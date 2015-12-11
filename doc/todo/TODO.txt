@@ -1,29 +1,18 @@
-﻿[Comment by Jingshan] Suggest to create a new section to the end of this document (whose name is of your choice). All completed bullets will be moved to this new section.
-
-hsa-miR-125b-5p
-
-1)
-TargetGene		# of PubMed Papers Total			# of PubMed Papers after filtering "Drug Resistance"		% of reduced number
-IRF4			130									3															98
-[Comment by Jingshan] Suggest to move the above to the above-mentioned new section.
-
-Later)
-Create issue for missing miRNA labels for NCRO.
-Clean up data (remove duplicated predictions, get correct gene ids)
-Add Usage/Relations in ontologies.
-[Comment by Jingshan] Suggest to combine the above three issues into "Ontology Fixes."
-
-Ontology Fixes:
+﻿Ontology Fixes:
 1)
 I found another error in NCRO Table 4 (now Table 3):
  
-Line 1, Range: miRNA_gene_family_group  miRNA_gene_family
+Line 1, Range: miRNA_gene_family_group -> miRNA_gene_family
  
 Please add an entry to your to-do-list:
 In the ncro ontology, “is_classified_into_gene_family_group” needs to be changed to “is_classified_into_gene_family”
 
 2)
-There are several relations that are non existent between terms in the ncro.owl file. I download the ncro.owl file from GitHub as well, just to make sure that I had the latest version. I don’t know if the relations are defined in other OWL files and just not showing up when imported. I would think that these relations would still be present in the ontology.
+Add Usage/Relations in ontologies:
+There are several relations that are non existent between terms in the ncro.owl file. 
+I download the ncro.owl file from GitHub as well, just to make sure that I had the latest version. 
+I don’t know if the relations are defined in other OWL files and just not showing up when imported. 
+I would think that these relations would still be present in the ontology.
 
 For example, there are no ‘occurs in’ relations in the ontology, yet these are in the diagram:
 GO:transcription ‘occurs in’ GO:cell
@@ -36,15 +25,30 @@ There are 4 ‘participates in’ relations in the diagram that are missing from
 The ‘part of’ is used several time in the diagram but is not used in NCRO at all.
 
 3)
-Add BFO:has part
-[Comment by Jingshan] Should be RO:has part
+Change "BFO:has part" to "RO:has part".
 
 4)
-Add total number to non-MeSH-filtered gene names in Predicted by
-[Comment by Jingshan] Should be moved to a new section "Software Fixes" and it is abuot the "Publications" rather than "Predicted By" column.
+Create issue for missing miRNA labels for NCRO.
 
 5)
-Add comments to source code
-[Comment by Jingshan] Should be moved to the section "Software Fixes."
+Clean up data (remove duplicated predictions, get correct gene ids).
 
-[Comment by Jingshan] Add a new bullet to "Software Fixes" regarding the implementation of the radio "Predicted by all databases."
+
+
+Software Fixes:
+1)
+Add comments to source code.
+
+2)
+Implement "Predicted by all databases" radio button feature.
+
+3)
+Add total number to non-MeSH-filtered gene names in "Publications" column.
+
+
+
+Completed:
+1)
+hsa-miR-125b-5p
+TargetGene		# of PubMed Papers Total			# of PubMed Papers after filtering "Drug Resistance"		% of reduced number
+IRF4			130		
