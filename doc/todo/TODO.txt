@@ -1,10 +1,5 @@
 ﻿Ontology Fixes:
 1)
-I found another error in NCRO Table 4 (now Table 3):
- 
-Line 1, Range: miRNA_gene_family_group -> miRNA_gene_family
- 
-Please add an entry to your to-do-list:
 In the ncro ontology, “is_classified_into_gene_family_group” needs to be changed to “is_classified_into_gene_family”
 
 2)
@@ -24,11 +19,13 @@ CL:cell ‘occurs in’ PRO:protein
 There are 4 ‘participates in’ relations in the diagram that are missing from NCRO.
 The ‘part of’ is used several time in the diagram but is not used in NCRO at all.
 
+To add usage for a relation, go to the "Domain" class of this relation, then add a subclass (using the "Object restriction" type and choosing the "Range" class of the aforementioned realtion).
+
 3)
 Change "BFO:has part" to "RO:has part".
 
 4)
-Create issue for missing miRNA labels for NCRO.
+Create an issue for missing miRNA labels for NCRO.
 
 5)
 Clean up data (remove duplicated predictions, get correct gene ids).
@@ -45,6 +42,12 @@ Implement "Predicted by all databases" radio button feature.
 3)
 Add total number to non-MeSH-filtered gene names in "Publications" column.
 
+4)
+[The following issue was raised by one domain expert.]
+It would be better if the user has three options:
+1. Show all predicted genes.
+2. Only show the genes that have MeSH-term filtered publications. 
+3. Only show the genes that do not have MeSH-term filtered publications. 
 
 
 Completed:
