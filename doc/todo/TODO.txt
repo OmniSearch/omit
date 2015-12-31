@@ -34,7 +34,38 @@ Clean up data (remove duplicated predictions, get correct gene ids).
 
 Software Fixes:
 1)
-Add comments to source code.
+Add more pubmed data to the OmniStore
+A subset of PubMed Ids related to the following MeSH Terms have been added to the OmniStore:
+Adipogenesis
+Anoikis
+Autophagy
+Carcinogenesis
+Cell Adhesion
+Cell cycle
+Cell Differentiation
+Cell Polarity
+Cell Proliferation
+Circulating
+Cytokinesis
+DNA break
+DNA damage
+DNA methylation
+DNA repair
+Endocytosis
+Glycolysis
+Infiltration
+Invasiveness
+Metastasis
+Methylation
+Mitosis
+Mutagenesis
+Mutation
+Necrosis
+Oxygen Consumption
+Recurrence
+Regression
+Ubiquitylation
+
 
 2)
 Implement "Predicted by all databases" radio button feature.
@@ -50,7 +81,44 @@ It would be better if the user has three options:
 3. Only show the genes that do not have MeSH-term filtered publications. 
 
 
+
 Completed:
+1)
+Add comments to source code.
+
+5)
+Modified pubmed.owl data to now include the MeSH_Term IRI rather than a MeSH_Term string
+in order to speed up search time. The SPARQL query was modified in order to reflect these changes.
+
+For example:
+Before:
+<owl:NamedIndividual rdf:about="&obo;OMIT_1228026">
+
+	<rdf:type rdf:resource="&obo;OMIT_0000003"/>
+
+	<obo:BFO_00000150 rdf:datatype="&xsd;string">Drug resistance</obo:OMIT_0000150>
+
+	<obo:OMIT_0000151 rdf:datatype="&xsd;string">23520479</obo:OMIT_0000151>
+
+	<obo:RO_0000057 rdf:resource="&obo;OMIT_0016171"/>
+
+</owl:NamedIndividual>
+
+
+After:
+<owl:NamedIndividual rdf:about="&obo;OMIT_1228026">
+
+	<rdf:type rdf:resource="&obo;OMIT_0000003"/>
+
+	<obo:BFO_0000051 rdf:resource="&obo;OMIT_0000072"/>
+ /** BFO_0000051 => "has part",  OMIT_0000072 => "Drug resistance" **/
+	<obo:OMIT_0000151 rdf:datatype="&xsd;string">23520479</obo:OMIT_0000151>
+
+	<obo:RO_0000057 rdf:resource="&obo;OMIT_0016171"/>
+
+</owl:NamedIndividual>
+
+
 1)
 hsa-miR-125b-5p
 TargetGene		# of PubMed Papers Total			# of PubMed Papers after filtering "Drug Resistance"		% of reduced number
