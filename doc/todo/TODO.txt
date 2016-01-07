@@ -80,6 +80,10 @@ It would be better if the user has three options:
 2. Only show the genes that have MeSH-term filtered publications. 
 3. Only show the genes that do not have MeSH-term filtered publications. 
 
+5)
+The microRNA.org data contains scores that are negative and in decimal format.
+Determine what these scores represent and if necessary, convert them to a percentage
+in order to match the mirDB.org and targetscan.org data.
 
 
 Completed:
