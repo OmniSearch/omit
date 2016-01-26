@@ -1,5 +1,9 @@
 ﻿Ontology Fixes:
 1)
+Clean up data (remove duplicated predictions, get correct gene ids).
+
+NCRO Fixes:
+1)
 In the ncro ontology, “is_classified_into_gene_family_group” needs to be changed to “is_classified_into_gene_family”
 
 2)
@@ -23,14 +27,6 @@ To add usage for a relation, go to the "Domain" class of this relation, then add
 
 3)
 Change "BFO:has part" to "RO:has part".
-
-4)
-Create an issue for missing miRNA labels for NCRO.
-
-5)
-Clean up data (remove duplicated predictions, get correct gene ids).
-
-
 
 Software Fixes:
 1)
@@ -132,3 +128,6 @@ It would be better if the user has three options:
 
 7)
 Implement "Predicted by all databases" radio button feature.
+
+8)
+Create an issue for missing miRNA labels for NCRO.
