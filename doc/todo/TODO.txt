@@ -66,21 +66,10 @@ Recurrence
 Regression
 Ubiquitylation
 
-
 2)
-Implement "Predicted by all databases" radio button feature.
-
-3)
 Add total number to non-MeSH-filtered gene names in "Publications" column.
 
-4)
-[The following issue was raised by one domain expert.]
-It would be better if the user has three options:
-1. Show all predicted genes.
-2. Only show the genes that have MeSH-term filtered publications. 
-3. Only show the genes that do not have MeSH-term filtered publications. 
-
-5)
+3)
 The microRNA.org data contains scores that are negative and in decimal format.
 Determine what these scores represent and if necessary, convert them to a percentage
 in order to match the mirDB.org and targetscan.org data.
@@ -90,7 +79,7 @@ Completed:
 1)
 Add comments to source code.
 
-5)
+2)
 Modified pubmed.owl data to now include the MeSH_Term IRI rather than a MeSH_Term string
 in order to speed up search time. The SPARQL query was modified in order to reflect these changes.
 
@@ -122,8 +111,24 @@ After:
 
 </owl:NamedIndividual>
 
+3)
+Add (0) to publications that contain no Publication Links
+Remove link from Publications column when the count is 0
 
-1)
+4)
+Change "Evidence" to "Evidence Filter"
+
+5)
 hsa-miR-125b-5p
 TargetGene		# of PubMed Papers Total			# of PubMed Papers after filtering "Drug Resistance"		% of reduced number
-IRF4			130		
+IRF4			130
+
+6)
+[The following issue was raised by one domain expert.]
+It would be better if the user has three options:
+1. Show all predicted genes.
+2. Only show the genes that have MeSH-term filtered publications. 
+3. Only show the genes that do not have MeSH-term filtered publications.
+
+7)
+Implement "Predicted by all databases" radio button feature.
